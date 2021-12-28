@@ -1,0 +1,45 @@
+<h1>Productos <small>Lista de Productos</small></h1>
+
+<hr>
+
+
+<div class="row">
+    <div *ngIf=" compra.listProd.length > 0" class="col text-right">
+        <button routerLink="/compras" class="btn btn-primary btn-sm">
+      <i class="fa fa-share"></i>
+      Detalle Compras
+    </button>
+    </div>
+    <div *ngIf=" compra.listProd.length > 0" class="col text-right">
+        <button (click)="initCompra()" class="btn btn-primary btn-sm">
+      <i class="fa fa-eraser"></i>
+      Inicializa Compra
+    </button>
+    </div>
+</div>
+
+
+<div class="card-columns">
+
+    <div class="card fadeIn fast" *ngFor="let producto of productos; let i = index">
+        <img [src]="producto.imagen" height="100" class="card-img-top" [alt]="producto.descripcion">
+        <div class="card-body">
+            <h5 class="card-title">{{producto.nombre}}</h5>
+            <p class="card-text">Valor: {{producto.valor}}</p>
+            <p class="card-text">Inventario: {{producto.cantidadInv}}</p>
+            <button (click)="verProducto(i)" type="button" class="btn btn-outline-primary btn-block ">
+                Detalle Producto
+            </button>
+            <button *ngIf=" producto.cantidadInv > 0" (click)="addCompra(i)" type="button" class="btn btn-outline-primary btn-block ">
+                Adicionar Compra
+            </button>
+            <button *ngIf=" producto.cantidadInv < 1" type="button" class="btn btn-danger btn-block ">
+                NO HAY INVENTARIO
+            </button>
+        </div>
+    </div>
+
+
+
+
+</div>
