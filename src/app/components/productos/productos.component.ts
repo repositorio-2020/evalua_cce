@@ -1,6 +1,5 @@
 
 import { Component, OnInit } from '@angular/core';
-import { HeroesService, Heroe } from '../../servicios/heroes.service';
 import { IProductos } from 'src/app/modelos/modeloProducto';
 import { Compras } from 'src/app/modelos/modeloCompra';
 import { Router } from '@angular/router';
@@ -15,7 +14,6 @@ import { ComprasService } from '../../servicios/compras.service';
 export class ProductosComponent implements OnInit {
 
   productos: IProductos[] = []; 
-  heroes:Heroe[] = [];
   compras: Compras[] = [] ;
   compra: Compras = { IdCompra: null, fecha: "", listProd: [] };
 

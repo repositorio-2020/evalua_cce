@@ -6,7 +6,7 @@ import { HttpClientModule  } from '@angular/common/http'
 import { APP_ROUTING } from './app.routes';
 
 // Servicios
-import { HeroesService } from './servicios/heroes.service';
+
 
 
 // Components
@@ -36,7 +36,7 @@ import { ProductosComponent } from './components/productos/productos.component';
     APP_ROUTING,
     HttpClientModule
   ],
-  providers: [ HeroesService ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
